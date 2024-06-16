@@ -25,10 +25,10 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 @SpringBootTest //등록된 빈을 어플리케이션 컨텍스트에 등록
 @Transactional
-@ActiveProfiles("test")
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY, connection = EmbeddedDatabaseConnection.H2)
+@ActiveProfiles("chaos-monkey")
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE, connection = EmbeddedDatabaseConnection.NONE)
 //테스트는 h2 디비 사용
-public class SpringBootTestExampleTests {
+public class SpringBootTestExample2Tests {
     // 테스트 db에 공연정보를 추가 테스트
     @Autowired
     private TicketingService ticketingService;
