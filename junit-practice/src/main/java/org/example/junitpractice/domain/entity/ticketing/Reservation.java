@@ -19,7 +19,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @SQLRestriction("deleted_at IS NULL")
-public class Reservation extends BaseEntity {
+public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -47,8 +47,8 @@ public class Reservation extends BaseEntity {
             .build();
     }
 
-    public void softDelete(){
-        super.setDeletedAt(LocalDateTime.now());
-    }
+//    public void softDelete(){
+//        super.setDeletedAt(LocalDateTime.now());
+//    }
 
 }
